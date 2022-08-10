@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Angular Reactive Driven Form</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form"  (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Movie Title</label>
+                            <input type="text" class="form-control" formControlName="title">
+                            <span class="text-danger" *ngIf="(createMovieForm.controls['title'].touched || submitted) && (createMovieForm.controls['title'].errors?.['required'])">
+                                Movie Title is Required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" formControlName="posterUrl">
+                            <span class="text-danger" *ngIf="(createMovieForm.controls['posterUrl'].touched || submitted) && (createMovieForm.controls['posterUrl'].errors?.['required'])">
+                                Poster URL is Required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date Of Birth</label>
+                            <input type="text" class="form-control" formControlName="releaseDate">
+                            <span class="text-danger" *ngIf="(createMovieForm.controls['releaseDate'].touched || submitted) && (createMovieForm.controls['releaseDate'].errors?.['required'])">
+                                Release Date is Required
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" [disabled]="!createMovieForm.valid">Add Movie</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

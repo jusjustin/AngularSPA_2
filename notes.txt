@@ -1,0 +1,63 @@
+Angular started out as AngularJS and then Angular 2 was released in 2016.
+Angular is made by Google, React is made my Facebook, and Vue.js is from another company
+React is more popular in web development in general but the reason we chose angular was because it is
+more popular with .NET teams and full stack developers. 
+Angular releases a new version every 6 months or so
+Angular Long Term Support is 18 months minimum guarantee per release 
+
+Similarities between C# and Angular:
+Controllers         Components
+Views               Templates
+Attributes          Decorators
+Services            Services
+DI                  DI
+Routing             Routing
+Filters             Guards
+Middleware          Interceptors
+C#                  TypeScript    (Same inventor)
+
+Angular is based on Modules:
+Application for Antra -> HCM (Human Capital Management)
+Recruiting -> hire candidate, fire candidate, schedule interview, provide feedback
+Sales -> Vendor Submission, See what interviews are coming up, follow up with client
+Reporting -> Consultant List, active consultants, placed consultants
+....
+
+All modules must be created inside the src folder
+
+The component is the main building block of an angular Application. A component contains the definition of the
+view and the data that defines how the view looks and behaves. The Angular components are plain javascript classes
+and are defined using @component decorator. This decorator provides the component with the view to display & 
+metadata about the class.
+
+Components pass the data to the view using a process called data binding. This is done by binding the DOM elements
+to component properties. Binding can be used to display component class property values to the user, change
+element styles, respond to a user event, etc. 
+
+An Angular Decorator is a function which we use to attach metadata to a class, method, accessor, property, or parameter.
+The expression is the name of the decorator.
+
+@NgModule decorator defines the class as an angular module and adds the required metadata to it.
+
+The Angular framework recognizes a class as a component only if we decorate it with the @Component decorator. 
+
+@Injectable decorator has two purposes:
+- It instructs the Angular framework that this class needs a dependency. The compiler will generate the necessary metadata 
+to create the class's dependencies
+- Secondly, using the providedIn we inform the dependency injection system how to provide the service 
+
+@Directive decorator marks a class as an angular directive. These directives help us to change the appearance, behavior, or layout of a DOM element.
+
+@Pipe decorator marks a class as an angular pipe and supplies the necessary configuration metadata.
+
+@Input decorator marks a property or variable as an input property. This means it can receive data from the parent component.
+The parent component uses the property binding functionality in angular to bind it to a component property or variable in the 
+parent component. This means that whenever the value of that variable changes in the parent component, it will be updated and 
+change in the child component as well. 
+
+@Output decorator marks the property as an output property. We initialize as an EventEmitter. The child component raises the
+event and passes the data as the argument to the event. The parent component listens for this event and reads the data.
+
+root routes start at localhost:4200/(Route starts here)
+
+child routes start for example for accounts module at: localhost:4200/Account/(Route starts here)

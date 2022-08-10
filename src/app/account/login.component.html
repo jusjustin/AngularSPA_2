@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Angular Template Driven Form</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" formControlName="email">
+                            <span class="text-danger" *ngIf="(loginForm.controls['email'].touched || submitted) && (loginForm.controls['email'].errors?.['required'])">
+                                Email is Required
+                            </span>
+                            <span class="text-danger" *ngIf="(loginForm.controls['email'].touched || submitted) && (loginForm.controls['email'].errors?.['email'])">
+                                Please Enter a Valid Email
+                            </span>
+                        </div>
+                                                <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="confirmPassword">
+                            <span class="text-danger" *ngIf="(loginForm.controls['confirmPassword'].touched || submitted) && (loginForm.controls['confirmPassword'].errors?.['required'])">
+                                Password is Required
+                            </span>
+                            <span class="text-danger" *ngIf="(loginForm.controls['confirmPassword'].touched || submitted) && (loginForm.controls['confirmPassword'].errors?.['passwordMismatch'])">
+                                Passwords do not match!
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
